@@ -1,4 +1,4 @@
-### FFacebook : API Social Network
+### Facebook : API Social Network
 
 This project consists in building a Social network API with ExpressJS (application server) and Mongoose (mongoDB) technology, documenting the API and securing the API with token access.
 
