@@ -1,0 +1,1795 @@
+{
+	"info": {
+		"_postman_id": "1e81a550-5067-4b60-a1e1-70bc865231e0",
+		"name": "Facebook API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"first_name\": \"jacopo\",\n  \"last_name\": \"bonardi\",\n  \"email\": \"jacopobonardi@hotmail.com\",\n  \"password\": \"facebook\",\n  \"age\": 27,\n  \"city\": \"smallville\",\n  \"city_code\": 95670,\n  \"street_number\": 110,\n  \"street_type\": \"rue\",\n  \"street_name\": \"bonaparte\",\n  \"phone\": \"01 97 56 98 56\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show all User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/user/show/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"show",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show User By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/user/show/5ef904c2d66b1950aa0da703",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"show",
+								"5ef904c2d66b1950aa0da703"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User By Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"first_name\": \"david\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/update/5ebd4956892f50569e017e36",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"update",
+								"5ebd4956892f50569e017e36"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"first_name\": \"firstname_1dddE1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/destroy/5e5f8dfef32b8b655dde43f1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"destroy",
+								"5e5f8dfef32b8b655dde43f1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"limit\": 5,\n\t\"sort\": {\"first_name\": -1}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4571ae26-be17-4370-aada-f49768d2b1ac",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "b10ae79f-0a1d-4559-99ab-1ba579393ead",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Event",
+			"item": [
+				{
+					"name": "Create Event",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "organizer-auth",
+								"value": "tokenorganizer5687jfdkfldsfj",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"My game event\",\n  \"description\": \"This is My game event\",  \n  \"start_date\": \"25-09-2018\",\n  \"end_date\": \"15-12-2018\",\n  \"location\": \"paris\",\n  \"cover_photograph\": \"https://i.picsum.photos/id/866/1200/500.jpg\",\n  \"event_mode\": \"private\",\n  \"list_of_organizers\": \"5ef8e79f94ff604c5303a79c\",\n  \"list_of_members\": [\n    \"5ef904c2d66b1950aa0da703\",\n    \"5ebeed11f376d331eaf22550\",\n    \"5ef904c2d66b1950aa0da703\"\n\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/event/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"event",
+								"create"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "start_date",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "end_date",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Event",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "organizer-auth",
+								"value": "tokenorganizer5687jfdkfldsfj",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/event/show",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"event",
+								"show"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Event By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "organizer-auth",
+								"value": "tokenorganizer5687jfdkfldsfj",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"list_of_organizers\": [\n        \"5eb9c6b295354d09bb305240\",\n        \"5eb9c6bb95354d09bb305241\"\n    ],\n    \"list_of_members\": [],\n    \"_id\": \"5eb9c71195354d09bb305242\",\n    \"name\": \"event1udpdate\",\n    \"description\": \"no description\",\n    \"start_date\": \"2002-12-09T00:00:00.000Z\",\n    \"end_date\": \"2002-12-19T00:00:00.000Z\",\n    \"location\": \"paris\",\n    \"cover_photograph\": \"photo url\",\n    \"event_mode\": \"private\",\n    \"__v\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/event/show/5eb9c71195354d09bb305242",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"event",
+								"show",
+								"5eb9c71195354d09bb305242"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Event By Id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "organizer-auth",
+								"value": "tokenorganizer5687jfdkfldsfj",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"list_of_organizers\": [\n        \"5eb9c6b295354d09bb305240\",\n        \"5eb9c6bb95354d09bb305241\"\n    ],\n    \"list_of_members\": [],\n    \"_id\": \"5eb9c71195354d09bb305242\",\n    \"name\": \"event1udpdate\",\n    \"description\": \"no description\",\n    \"start_date\": \"2002-12-09T00:00:00.000Z\",\n    \"end_date\": \"2002-12-19T00:00:00.000Z\",\n    \"location\": \"paris\",\n    \"cover_photograph\": \"photo url\",\n    \"event_mode\": \"private\",\n    \"__v\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/event/update/5eb9c71195354d09bb305242",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"event",
+								"update",
+								"5eb9c71195354d09bb305242"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Event By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "organizer-auth",
+								"value": "tokenorganizer5687jfdkfldsfj",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/event/destroy/5eb9c71195354d09bb305242",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"event",
+								"destroy",
+								"5eb9c71195354d09bb305242"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Event",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "organizer-auth",
+								"value": "tokenorganizer5687jfdkfldsfj",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/event/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"event",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Group",
+			"item": [
+				{
+					"name": "Create Group",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "admin-authentication",
+								"value": "adminAuth6887wwewrwfwrtrew",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"myGroup\",\n  \"description\": \"group description\",\n  \"group_type\": \"private\",\n  \"admins\" :[\n  \t\"5ebbcad84a4fa1fc961e9fe7\"\n  \t],\n  \"members\" :[\n    \"5eb9c6b295354d09bb305240\",\n    \"5eb9c6bb95354d09bb305241\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/group/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"group",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Group",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "admin-authentication",
+								"value": "adminAuth6887wwewrwfwrtrew",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/group/show",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"group",
+								"show"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Group By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "admin-authentication",
+								"value": "adminAuth6887wwewrwfwrtrew",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"list_of_organizers\": [\n        \"5eb9c6b295354d09bb305240\",\n        \"5eb9c6bb95354d09bb305241\"\n    ],\n    \"list_of_members\": [],\n    \"_id\": \"5eb9c71195354d09bb305242\",\n    \"name\": \"event1udpdate\",\n    \"description\": \"no description\",\n    \"start_date\": \"2002-12-09T00:00:00.000Z\",\n    \"end_date\": \"2002-12-19T00:00:00.000Z\",\n    \"location\": \"paris\",\n    \"cover_photograph\": \"photo url\",\n    \"event_mode\": \"private\",\n    \"__v\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/group/show/5eb9c71195354d09bb305242",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"group",
+								"show",
+								"5eb9c71195354d09bb305242"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Group By Id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "admin-authentication",
+								"value": "adminAuth6887wwewrwfwrtrew",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"list_of_organizers\": [\n        \"5eb9c6b295354d09bb305240\",\n        \"5eb9c6bb95354d09bb305241\"\n    ],\n    \"list_of_members\": [],\n    \"_id\": \"5eb9c71195354d09bb305242\",\n    \"name\": \"event1udpdate\",\n    \"description\": \"no description\",\n    \"start_date\": \"2002-12-09T00:00:00.000Z\",\n    \"end_date\": \"2002-12-19T00:00:00.000Z\",\n    \"location\": \"paris\",\n    \"cover_photograph\": \"photo url\",\n    \"event_mode\": \"private\",\n    \"__v\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/group/update/5eb9c71195354d09bb305242",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"group",
+								"update",
+								"5eb9c71195354d09bb305242"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Group By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "admin-authentication",
+								"name": "Content-Type",
+								"value": "adminAuth6887wwewrwfwrtrew",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"first_name\": \"firstname_1dddE1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/group/destroy/5e5f8dfef32b8b655dde43f1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"group",
+								"destroy",
+								"5e5f8dfef32b8b655dde43f1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Group",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "admin-authentication",
+								"value": "adminAuth6887wwewrwfwrtrew",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/group/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"group",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Discution Thread",
+			"item": [
+				{
+					"name": "Create DiscutionThread",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"message\": [\n\t\t{\n\t\t\t\"content\": {\n\t\t\t\t\"text\": \"bonjour\",\n\t\t\t\t\"comment\": [ \n\t\t\t\t\t{\n\t\t\t\t\t\t\"text\": \"ceci est un commentaire\",\n\t\t\t\t\t\t\"userId\": \"5ebbcad84a4fa1fc961e9fe7\"\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t},\n\t\t\t\"userId\": \"5eb9c6b295354d09bb305240\"\n\t\t},\n\t\t{\n\t\t\t\"content\": {\n\t\t\t\t\"text\": \"bonsoir\"\n\t\t\t},\n\t\t\t\"userId\": \"5eb9c6b295354d09bb305240\"\n\t\t}\n\t],\n\t\"toChoice\": \"5eba630e95c817184c9dc6a6\",\n\t\"choice\": \"Event\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/discutionThread/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"discutionThread",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show DiscutionThread",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"list_of_organizers\": [\n        \"5eb9c6b295354d09bb305240\",\n        \"5eb9c6bb95354d09bb305241\"\n    ],\n    \"list_of_members\": [],\n    \"_id\": \"5eb9c71195354d09bb305242\",\n    \"name\": \"event1udpdate\",\n    \"description\": \"no description\",\n    \"start_date\": \"2002-12-09T00:00:00.000Z\",\n    \"end_date\": \"2002-12-19T00:00:00.000Z\",\n    \"location\": \"paris\",\n    \"cover_photograph\": \"photo url\",\n    \"event_mode\": \"private\",\n    \"__v\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/discutionThread/show/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"discutionThread",
+								"show",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show DiscutionThread By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"list_of_organizers\": [\n        \"5eb9c6b295354d09bb305240\",\n        \"5eb9c6bb95354d09bb305241\"\n    ],\n    \"list_of_members\": [],\n    \"_id\": \"5eb9c71195354d09bb305242\",\n    \"name\": \"event1udpdate\",\n    \"description\": \"no description\",\n    \"start_date\": \"2002-12-09T00:00:00.000Z\",\n    \"end_date\": \"2002-12-19T00:00:00.000Z\",\n    \"location\": \"paris\",\n    \"cover_photograph\": \"photo url\",\n    \"event_mode\": \"private\",\n    \"__v\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/discutionThread/show/5eb9c71195354d09bb305242",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"discutionThread",
+								"show",
+								"5eb9c71195354d09bb305242"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update DiscutionThread By Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"list_of_organizers\": [\n        \"5eb9c6b295354d09bb305240\",\n        \"5eb9c6bb95354d09bb305241\"\n    ],\n    \"list_of_members\": [],\n    \"_id\": \"5eb9c71195354d09bb305242\",\n    \"name\": \"event1udpdate\",\n    \"description\": \"no description\",\n    \"start_date\": \"2002-12-09T00:00:00.000Z\",\n    \"end_date\": \"2002-12-19T00:00:00.000Z\",\n    \"location\": \"paris\",\n    \"cover_photograph\": \"photo url\",\n    \"event_mode\": \"private\",\n    \"__v\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/discutionThread/update/5eb9c71195354d09bb305242",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"discutionThread",
+								"update",
+								"5eb9c71195354d09bb305242"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete DiscutionThread By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"first_name\": \"firstname_1dddE1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/discutionThread/destroy/5e5f8dfef32b8b655dde43f1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"discutionThread",
+								"destroy",
+								"5e5f8dfef32b8b655dde43f1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search DiscutionThread",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/discutionThread/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"discutionThread",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "c7b3f831-147f-448d-a1b6-7703d2c8979b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "68df67c9-bb2a-4aab-93af-14bf42ac1594",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Photo Book",
+			"item": [
+				{
+					"name": "Create PhotoBook",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"event\": \"5eba630e95c817184c9dc6a6\",\n\t\"photos\": [\n\t\t{\n\t\t\t\"content\": {\n\t\t\t\t\"photo\": \"lien url\",\n\t\t\t\t\"comment\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"text\": \"voici un autre commentaire\",\n\t\t\t\t\t\t\"memberId\": \"5eb9c6b295354d09bb305240\"\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t},\n\t\t\t\"memberId\": \"5eb9c6bb95354d09bb305241\"\n\t\t}\n\t]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/photoBook/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"photoBook",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show PhotoBook",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"list_of_organizers\": [\n        \"5eb9c6b295354d09bb305240\",\n        \"5eb9c6bb95354d09bb305241\"\n    ],\n    \"list_of_members\": [],\n    \"_id\": \"5eb9c71195354d09bb305242\",\n    \"name\": \"event1udpdate\",\n    \"description\": \"no description\",\n    \"start_date\": \"2002-12-09T00:00:00.000Z\",\n    \"end_date\": \"2002-12-19T00:00:00.000Z\",\n    \"location\": \"paris\",\n    \"cover_photograph\": \"photo url\",\n    \"event_mode\": \"private\",\n    \"__v\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/photoBook/show/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"photoBook",
+								"show",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show PhotoBook By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"list_of_organizers\": [\n        \"5eb9c6b295354d09bb305240\",\n        \"5eb9c6bb95354d09bb305241\"\n    ],\n    \"list_of_members\": [],\n    \"_id\": \"5eb9c71195354d09bb305242\",\n    \"name\": \"event1udpdate\",\n    \"description\": \"no description\",\n    \"start_date\": \"2002-12-09T00:00:00.000Z\",\n    \"end_date\": \"2002-12-19T00:00:00.000Z\",\n    \"location\": \"paris\",\n    \"cover_photograph\": \"photo url\",\n    \"event_mode\": \"private\",\n    \"__v\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/photoBook/show/5eb9c71195354d09bb305242",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"photoBook",
+								"show",
+								"5eb9c71195354d09bb305242"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update PhotoBook By Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"list_of_organizers\": [\n        \"5eb9c6b295354d09bb305240\",\n        \"5eb9c6bb95354d09bb305241\"\n    ],\n    \"list_of_members\": [],\n    \"_id\": \"5eb9c71195354d09bb305242\",\n    \"name\": \"event1udpdate\",\n    \"description\": \"no description\",\n    \"start_date\": \"2002-12-09T00:00:00.000Z\",\n    \"end_date\": \"2002-12-19T00:00:00.000Z\",\n    \"location\": \"paris\",\n    \"cover_photograph\": \"photo url\",\n    \"event_mode\": \"private\",\n    \"__v\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/photoBook/update/5eb9c71195354d09bb305242",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"photoBook",
+								"update",
+								"5eb9c71195354d09bb305242"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete PhotoBook By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"first_name\": \"firstname_1dddE1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/photoBook/destroy/5e5f8dfef32b8b655dde43f1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"photoBook",
+								"destroy",
+								"5e5f8dfef32b8b655dde43f1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search PhotoBook",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/photoBook/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"photoBook",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d84d7145-729b-49bf-bfcc-14a4abc2f762",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "224cb8a5-d7a1-45e4-9372-e143e9b28bc1",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Survey",
+			"item": [
+				{
+					"name": "Create Survey",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "organizer-auth",
+								"value": "tokenorganizer5687jfdkfldsfj",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"event\": \"5eba630e95c817184c9dc6a6\",\n\t\"questions\": {\n\t\t\"question\": {\n\t\t\t\"text\": \"Que pensez-vous des bananes?\",\n\t\t\t\"user\": \"5eb9c6b295354d09bb305240\"\n\t\t},\n\t\t\"answers\": [\n\t\t\t{\n\t\t\t\t\"index\": 1,\n\t\t\t\t\"answer\": \"c'est biens \"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"index\": 2,\n\t\t\t\t\"answer\": \"c'est nul\"\n\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\"index\": 3,\n\t\t\t\t\"answer\": \"pas d'avis\"\n\t\t\t}\n\t\t]\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/survey/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"survey",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Survey",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"list_of_organizers\": [\n        \"5eb9c6b295354d09bb305240\",\n        \"5eb9c6bb95354d09bb305241\"\n    ],\n    \"list_of_members\": [],\n    \"_id\": \"5eb9c71195354d09bb305242\",\n    \"name\": \"event1udpdate\",\n    \"description\": \"no description\",\n    \"start_date\": \"2002-12-09T00:00:00.000Z\",\n    \"end_date\": \"2002-12-19T00:00:00.000Z\",\n    \"location\": \"paris\",\n    \"cover_photograph\": \"photo url\",\n    \"event_mode\": \"private\",\n    \"__v\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/survey/show/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"survey",
+								"show",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Survey By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"list_of_organizers\": [\n        \"5eb9c6b295354d09bb305240\",\n        \"5eb9c6bb95354d09bb305241\"\n    ],\n    \"list_of_members\": [],\n    \"_id\": \"5eb9c71195354d09bb305242\",\n    \"name\": \"event1udpdate\",\n    \"description\": \"no description\",\n    \"start_date\": \"2002-12-09T00:00:00.000Z\",\n    \"end_date\": \"2002-12-19T00:00:00.000Z\",\n    \"location\": \"paris\",\n    \"cover_photograph\": \"photo url\",\n    \"event_mode\": \"private\",\n    \"__v\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/survey/show/5eb9c71195354d09bb305242",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"survey",
+								"show",
+								"5eb9c71195354d09bb305242"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Survey By Id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "member-auth",
+								"value": "tokenmember46786djfdsklmfkmdlscsq",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"list_of_organizers\": [\n        \"5eb9c6b295354d09bb305240\",\n        \"5eb9c6bb95354d09bb305241\"\n    ],\n    \"list_of_members\": [],\n    \"_id\": \"5eb9c71195354d09bb305242\",\n    \"name\": \"event1udpdate\",\n    \"description\": \"this is a description\",\n    \"start_date\": \"2002-12-09T00:00:00.000Z\",\n    \"end_date\": \"2002-12-19T00:00:00.000Z\",\n    \"location\": \"paris\",\n    \"cover_photograph\": \"photo url\",\n    \"event_mode\": \"private\",\n    \"__v\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/survey/update/5eb9c71195354d09bb305242",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"survey",
+								"update",
+								"5eb9c71195354d09bb305242"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Survey Answer",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "member-auth",
+								"value": "tokenmember46786djfdsklmfkmdlscsq",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"answerChoice\": [\n        {\n            \"userAnswer\": \"5eb9c6b295354d09bb305240\",\n            \"userChoiceIndex\": 2\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/survey/update/answer/5ebe5f7564dd4f0809ca3abe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"survey",
+								"update",
+								"answer",
+								"5ebe5f7564dd4f0809ca3abe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Survey By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "organizer-auth",
+								"name": "Content-Type",
+								"value": "tokenorganizer5687jfdkfldsfj",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"first_name\": \"firstname_1dddE1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/survey/destroy/5e5f8dfef32b8b655dde43f1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"survey",
+								"destroy",
+								"5e5f8dfef32b8b655dde43f1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Survey",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/survey/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"survey",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Ticketing",
+			"item": [
+				{
+					"name": "Create Ticketing",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "organizer-auth",
+								"value": "tokenorganizer5687jfdkfldsfj",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"event\":\"5eba630e95c817184c9dc6a6\",\n\t\"organizer\": \"5eb9c6bb95354d09bb305241\",\n\t\"ticket_type\" : [\n\t\t{\n\t\t\t\"ticket_index\": 1,\n\t\t\t\"ticket_name\": \"billet enfant\",\n\t\t\t\"amount\": 10,\n\t\t\t\"ticket_quantity\": 100\n\t\t},\n\t\t{\n\t\t\t\"ticket_index\": 2,\n\t\t\t\"ticket_name\": \"billet adulte\",\n\t\t\t\"amount\": 15,\n\t\t\t\"ticket_quantity\": 20\n\t\t}\n\t]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/ticketing/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"ticketing",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Ticketing",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "organizer-auth",
+								"value": "tokenorganizer5687jfdkfldsfj",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"list_of_organizers\": [\n        \"5eb9c6b295354d09bb305240\",\n        \"5eb9c6bb95354d09bb305241\"\n    ],\n    \"list_of_members\": [],\n    \"_id\": \"5eb9c71195354d09bb305242\",\n    \"name\": \"event1udpdate\",\n    \"description\": \"no description\",\n    \"start_date\": \"2002-12-09T00:00:00.000Z\",\n    \"end_date\": \"2002-12-19T00:00:00.000Z\",\n    \"location\": \"paris\",\n    \"cover_photograph\": \"photo url\",\n    \"event_mode\": \"private\",\n    \"__v\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/ticketing/show/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"ticketing",
+								"show",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Ticketing By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"list_of_organizers\": [\n        \"5eb9c6b295354d09bb305240\",\n        \"5eb9c6bb95354d09bb305241\"\n    ],\n    \"list_of_members\": [],\n    \"_id\": \"5eb9c71195354d09bb305242\",\n    \"name\": \"event1udpdate\",\n    \"description\": \"no description\",\n    \"start_date\": \"2002-12-09T00:00:00.000Z\",\n    \"end_date\": \"2002-12-19T00:00:00.000Z\",\n    \"location\": \"paris\",\n    \"cover_photograph\": \"photo url\",\n    \"event_mode\": \"private\",\n    \"__v\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/ticketing/show/5eb9c71195354d09bb305242?organizer-auth=tokenorganizer5687jfdkfldsfj",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"ticketing",
+								"show",
+								"5eb9c71195354d09bb305242"
+							],
+							"query": [
+								{
+									"key": "organizer-auth",
+									"value": "tokenorganizer5687jfdkfldsfj"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Ticketing By Id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "organizer-auth",
+								"value": "tokenorganizer5687jfdkfldsfj",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"list_of_organizers\": [\n        \"5eb9c6b295354d09bb305240\",\n        \"5eb9c6bb95354d09bb305241\"\n    ],\n    \"list_of_members\": [],\n    \"_id\": \"5eb9c71195354d09bb305242\",\n    \"name\": \"event1udpdate\",\n    \"description\": \"no description\",\n    \"start_date\": \"2002-12-09T00:00:00.000Z\",\n    \"end_date\": \"2002-12-19T00:00:00.000Z\",\n    \"location\": \"paris\",\n    \"cover_photograph\": \"photo url\",\n    \"event_mode\": \"private\",\n    \"__v\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/survey/update/5eb9c71195354d09bb30524",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"survey",
+								"update",
+								"5eb9c71195354d09bb30524"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Ticketing By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "organizer-auth",
+								"name": "Content-Type",
+								"value": "tokenorganizer5687jfdkfldsfj",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"first_name\": \"firstname_1dddE1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/survey/destroy/5e5f8dfef32b8b655dde43f1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"survey",
+								"destroy",
+								"5e5f8dfef32b8b655dde43f1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Ticketing",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "organizer-auth",
+								"value": "tokenorganizer5687jfdkfldsfj",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/ticketing/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"ticketing",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "bfb6f868-e14e-41e2-a69a-93ef4b8fc388",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "2de24cfd-26cd-49f3-92a2-9e99b64e630c",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Shopping List",
+			"item": [
+				{
+					"name": "Create ShoppingList",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "member-auth",
+								"value": "tokenmember46786djfdsklmfkmdlscsq",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"shopping_product\": [\n\t\t{\n\t\t\t\"product_name\": \"chocolat\",\n\t\t\t\"product_quantity\": 5,\n\t\t\t\"arrival_time:\": \"lundi 24 novembre 2019 - 15h\"\n\t\t}\n\t]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/shoppingList/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"shoppingList",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show ShoppingList",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "member-auth",
+								"value": "tokenmember46786djfdsklmfkmdlscsq",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"list_of_organizers\": [\n        \"5eb9c6b295354d09bb305240\",\n        \"5eb9c6bb95354d09bb305241\"\n    ],\n    \"list_of_members\": [],\n    \"_id\": \"5eb9c71195354d09bb305242\",\n    \"name\": \"event1udpdate\",\n    \"description\": \"no description\",\n    \"start_date\": \"2002-12-09T00:00:00.000Z\",\n    \"end_date\": \"2002-12-19T00:00:00.000Z\",\n    \"location\": \"paris\",\n    \"cover_photograph\": \"photo url\",\n    \"event_mode\": \"private\",\n    \"__v\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/shoppingList/show/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"shoppingList",
+								"show",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show ShoppingList By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "member-auth",
+								"value": "tokenmember46786djfdsklmfkmdlscsq",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"list_of_organizers\": [\n        \"5eb9c6b295354d09bb305240\",\n        \"5eb9c6bb95354d09bb305241\"\n    ],\n    \"list_of_members\": [],\n    \"_id\": \"5eb9c71195354d09bb305242\",\n    \"name\": \"event1udpdate\",\n    \"description\": \"no description\",\n    \"start_date\": \"2002-12-09T00:00:00.000Z\",\n    \"end_date\": \"2002-12-19T00:00:00.000Z\",\n    \"location\": \"paris\",\n    \"cover_photograph\": \"photo url\",\n    \"event_mode\": \"private\",\n    \"__v\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/shoppingList/show/5eb9c71195354d09bb305242",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"shoppingList",
+								"show",
+								"5eb9c71195354d09bb305242"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update shoppingList By Id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "member-auth",
+								"value": "tokenmember46786djfdsklmfkmdlscsq",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"list_of_organizers\": [\n        \"5eb9c6b295354d09bb305240\",\n        \"5eb9c6bb95354d09bb305241\"\n    ],\n    \"list_of_members\": [],\n    \"_id\": \"5eb9c71195354d09bb305242\",\n    \"name\": \"event1udpdate\",\n    \"description\": \"no description\",\n    \"start_date\": \"2002-12-09T00:00:00.000Z\",\n    \"end_date\": \"2002-12-19T00:00:00.000Z\",\n    \"location\": \"paris\",\n    \"cover_photograph\": \"photo url\",\n    \"event_mode\": \"private\",\n    \"__v\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/shoppingList/update/5eb9c71195354d09bb305242",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"shoppingList",
+								"update",
+								"5eb9c71195354d09bb305242"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "tokenmember46786djfdsklmfkmdlscsq",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete ShoppingList By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "member-auth",
+								"name": "Content-Type",
+								"value": "tokenmember46786djfdsklmfkmdlscsq",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"first_name\": \"firstname_1dddE1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/shoppingList/destroy/5e5f8dfef32b8b655dde43f1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"shoppingList",
+								"destroy",
+								"5e5f8dfef32b8b655dde43f1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search shoppingList",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "member-auth",
+								"value": "tokenmember46786djfdsklmfkmdlscsq",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "limit",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/shoppingList/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"shoppingList",
+								"search"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4f3b7ee0-e965-4b21-a427-b92773a42bac",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "32286889-9441-4387-a5d2-4bf9fff8bb6d",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
